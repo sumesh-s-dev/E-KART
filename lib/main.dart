@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'config/supabase_config.dart';
-import 'core/router/app_router.dart';
+import 'core/theme/router/app_router.dart';
 import 'core/services/notification_service.dart';
 
 void main() async {
