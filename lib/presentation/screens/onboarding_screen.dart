@@ -35,7 +35,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   void _onNext() {
     if (_currentIndex < pages.length - 1) {
-      _controller.nextPage(duration: const Duration(milliseconds: 400), curve: Curves.easeInOut);
+      _controller.nextPage(
+          duration: const Duration(milliseconds: 400), curve: Curves.easeInOut);
     } else {
       context.go('/auth/login');
     }
@@ -64,7 +65,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 24.0, horizontal: 32.0),
+                padding: const EdgeInsets.symmetric(
+                    vertical: 24.0, horizontal: 32.0),
                 child: Column(
                   children: [
                     Row(
@@ -77,7 +79,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           height: 8,
                           width: _currentIndex == i ? 24 : 8,
                           decoration: BoxDecoration(
-                            color: _currentIndex == i ? AppColors.primaryGold : Colors.white24,
+                            color: _currentIndex == i
+                                ? AppColors.primaryGold
+                                : Colors.white24,
                             borderRadius: BorderRadius.circular(8),
                           ),
                         ),
@@ -96,13 +100,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           ),
                         ),
                         onPressed: _onNext,
-                        child: Text(_currentIndex == pages.length - 1 ? 'Get Started' : 'Next'),
+                        child: Text(_currentIndex == pages.length - 1
+                            ? 'Get Started'
+                            : 'Next'),
                       ),
                     ),
                     if (_currentIndex < pages.length - 1)
                       TextButton(
                         onPressed: () => context.go('/auth/login'),
-                        child: const Text('Skip', style: TextStyle(color: Colors.white70)),
+                        child: const Text('Skip',
+                            style: TextStyle(color: Colors.white70)),
                       ),
                   ],
                 ),
@@ -119,7 +126,8 @@ class _OnboardingPageData {
   final String title;
   final String description;
   final IconData image;
-  const _OnboardingPageData({required this.title, required this.description, required this.image});
+  const _OnboardingPageData(
+      {required this.title, required this.description, required this.image});
 }
 
 class _OnboardingPage extends StatelessWidget {
@@ -145,17 +153,17 @@ class _OnboardingPage extends StatelessWidget {
               page.title,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             const SizedBox(height: 20),
             Text(
               page.description,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Colors.white70,
-              ),
+                    color: Colors.white70,
+                  ),
             ),
           ],
         ),

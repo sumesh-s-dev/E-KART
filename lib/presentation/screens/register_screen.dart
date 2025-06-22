@@ -68,7 +68,6 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
     return FadeInDown(
       child: Column(
         children: [
-          // Back Button
           Row(
             children: [
               IconButton(
@@ -102,16 +101,16 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
           Text(
             'Create Account',
             style: Theme.of(context).textTheme.displaySmall?.copyWith(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           const SizedBox(height: 8),
           Text(
-            'Sign up as ${_userRole}',
+            'Sign up as $_userRole',
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: Colors.white70,
-            ),
+                  color: Colors.white70,
+                ),
           ),
         ],
       ),
@@ -185,11 +184,13 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                   decoration: BoxDecoration(
                     color: AppColors.errorRed.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: AppColors.errorRed.withOpacity(0.3)),
+                    border:
+                        Border.all(color: AppColors.errorRed.withOpacity(0.3)),
                   ),
                   child: Row(
                     children: [
-                      const Icon(Icons.error_outline, color: AppColors.errorRed),
+                      const Icon(Icons.error_outline,
+                          color: AppColors.errorRed),
                       const SizedBox(width: 8),
                       Expanded(
                         child: Text(
@@ -217,17 +218,17 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
           Text(
             'Already have an account? ',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Colors.white70,
-            ),
+                  color: Colors.white70,
+                ),
           ),
           GestureDetector(
             onTap: () => context.go('/auth/login?role=$_userRole'),
             child: Text(
               'Sign In',
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: AppColors.primaryGold,
-                fontWeight: FontWeight.w600,
-              ),
+                    color: AppColors.primaryGold,
+                    fontWeight: FontWeight.w600,
+                  ),
             ),
           ),
         ],
@@ -240,11 +241,11 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
 
     try {
       await ref.read(authProvider.notifier).signUp(
-        name: _nameController.text.trim(),
-        email: _emailController.text.trim(),
-        password: _passwordController.text,
-        role: _userRole,
-      );
+            name: _nameController.text.trim(),
+            email: _emailController.text.trim(),
+            password: _passwordController.text,
+            role: _userRole,
+          );
       if (mounted) {
         context.go('/home');
       }
