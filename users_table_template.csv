@@ -1,0 +1,2 @@
+user_id,username,user_type,email,phone,created_at,updated_at
+00000000-0000-0000-0000-000000000000,exampleuser,Student,example@email.com,1234567890,2024-06-01T12:00:00Z,2024-06-01T12:00:00Z 

@@ -7,20 +7,45 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^6.0.5
-  supabase_flutter: ^1.10.6
-
+  
+  # State Management
+  flutter_bloc: ^9.1.1
+  equatable: ^2.0.5
+  
+  # Backend & API
+  supabase_flutter: ^2.9.1
+  http: ^1.2.1
+  
+  # Image Storage & Upload
+  cloudinary_public: 0.23.1
+  image_picker: ^1.0.7
+  cached_network_image: ^3.4.1
+  
+  # UI & Design
+  shimmer: ^3.0.0
+  lottie: ^3.3.1
+  
+  # Utils
+  intl: ^0.20.2
+  uuid: ^4.3.3
+  url_launcher: ^6.3.1
+  
   # The following adds the Cupertino Icons font to your application.
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^5.0.0
 
 flutter:
-  uses-material-design: true 
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/animations/ 
